@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<AnchorPane id="AnchorPane" fx:id="root" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.DatosDeOrdenDeCompraController">
+   <children>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <VBox layoutX="225.0" layoutY="28.0" prefHeight="398.0" prefWidth="417.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <ToolBar prefHeight="40.0" prefWidth="200.0">
+                    <items>
+                        <Button fx:id="btnVerDatosOrden" layoutX="20.0" layoutY="12.0" mnemonicParsing="false" onAction="#verOrden" text="Datos de Orden">
+                           <graphic>
+                              <FontIcon iconLiteral="fa-eye" iconSize="18" />
+                           </graphic>
+                        </Button>
+                        <Separator orientation="VERTICAL" />
+                      <Button fx:id="btnDevolver" mnemonicParsing="false" onAction="#devolverProducto" text="Retirar de orden">
+                           <graphic>
+                              <FontIcon iconLiteral="fa-mail-reply-all" iconSize="18" />
+                           </graphic>
+                        </Button>
+                        <Button fx:id="btnAdjuntar" layoutX="10.0" layoutY="13.0" mnemonicParsing="false" onAction="#verFacturas" text="Ver Facturas">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                           <graphic>
+                              <FontIcon iconLiteral="fa-paperclip" iconSize="18" />
+                           </graphic>
+                        </Button>
+                        <Button fx:id="btnRecibirPedidos" disable="true" layoutX="137.0" layoutY="13.0" mnemonicParsing="false" onAction="#recibirPedido" text="Recibir">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                           <graphic>
+                              <FontIcon iconLiteral="fa-check" iconSize="18" />
+                           </graphic>
+                        </Button>
+                    </items>
+                  </ToolBar>
+                  <TableView fx:id="tabla" editable="true" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                    <columns>
+                      <TableColumn fx:id="colItem" prefWidth="75.0" text="#" />
+                      <TableColumn fx:id="colCantSoli" prefWidth="75.0" text="PEDIDO" />
+                        <TableColumn fx:id="colCantRecib" prefWidth="75.0" text="RECIBIDO" />
+                        <TableColumn fx:id="colSeleccion" maxWidth="40.0" minWidth="40.0" prefWidth="40.0">
+                           <graphic>
+                              <CheckBox fx:id="checkTodos" mnemonicParsing="false" onAction="#seleccionarTodos" />
+                           </graphic>
+                        </TableColumn>
+                        <TableColumn fx:id="colCantPend" prefWidth="75.0" text="PENDIENTE" />
+                        <TableColumn fx:id="colValorFinal" prefWidth="75.0" text="\$ PRECIO" />
+                        <TableColumn fx:id="colProducto" prefWidth="75.0" text="PRODUCTO / SERVICIO" />
+                    </columns>
+                  </TableView>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
